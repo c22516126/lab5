@@ -11,7 +11,7 @@ jobs:
     - name: Compile C Program
       run: gcc hello.c -o hello
     - name: Upload Executable
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: hello
         path: ./hello
