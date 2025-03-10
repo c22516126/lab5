@@ -1,0 +1,17 @@
+name: C Build and Upload
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+    - name: Compile C Program
+      run: gcc hello.c -o hello
+    - name: Upload Executable
+      uses: actions/upload-artifact@v3
+      with:
+        name: hello
+        path: ./hello
