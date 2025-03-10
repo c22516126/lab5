@@ -1,0 +1,20 @@
+name: C Build and Upload
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Compile C Program using Makefile
+      run: make  
+
+    - name: Upload compiled binary as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: somethingBinary
+        path: ./something
